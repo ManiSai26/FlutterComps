@@ -30,8 +30,8 @@ class PreviewBox extends StatelessWidget {
                 ),
                 child:Column(children: [
                   index <= 0 ? components[index] : const Text('Coming soon'),
-                  SizedBox(height: 10,),
-                  Text(index<=0? labels[index]:'Coming Soon....'),
+                  const SizedBox(height: 10,),
+                  Text(index<=0? labels[index]:'Coming Soon'),
                 ],),
 
               ),
