@@ -5,8 +5,10 @@ import 'widgets.dart';
 class PreviewBox extends StatelessWidget {
   final int index;
   const  PreviewBox({Key? key,required this.index}) : super(key: key);
-  static List<Widget> components=[CircularInputContainer(label: 'Example')];
-  static List<String> labels=['Circular Input Container'];
+  static List<Widget> components=[CircularInputContainer(label: 'Example'),CircularButton(label: 'Button', onPressed: ()=>{
+
+  })];
+  static List<String> labels=['Circular Input Container','Circular Button'];
   @override
   Widget build(BuildContext context) {
     return
@@ -33,10 +35,10 @@ class PreviewBox extends StatelessWidget {
                     alignment: Alignment.center,
                     width: 500,
                     child:
-                      index <= 0 ? components[index] : const Text('Coming soon'),
+                      index <= 1 ? components[index] : const Text('Coming soon'),
                   ),
                   const SizedBox(height: 10,),
-                  Text(index<=0? labels[index]:'Coming Soon'),
+                  Text(index<=1? labels[index]:'Coming Soon'),
                 ],),
 
               ),
