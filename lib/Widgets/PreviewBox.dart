@@ -15,7 +15,7 @@ class PreviewBox extends StatelessWidget {
           hoverColor: Colors.white,
           onTap: ()=>{
             Navigator.of(context).push(MaterialPageRoute(builder: (context)=>
-              CodeScreen(),
+              CodeScreen(widget: components[index],),
           )),
           },
 
@@ -29,7 +29,12 @@ class PreviewBox extends StatelessWidget {
                   borderRadius:const BorderRadius.all(Radius.circular(20.0)),
                 ),
                 child:Column(children: [
-                  index <= 0 ? components[index] : const Text('Coming soon'),
+                  Container(
+                    alignment: Alignment.center,
+                    width: 500,
+                    child:
+                      index <= 0 ? components[index] : const Text('Coming soon'),
+                  ),
                   const SizedBox(height: 10,),
                   Text(index<=0? labels[index]:'Coming Soon'),
                 ],),
